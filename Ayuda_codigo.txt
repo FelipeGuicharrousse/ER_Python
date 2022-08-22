@@ -1,0 +1,13 @@
+condicional ::= ’?’ dir comando
+
+dir ::= (’U’ | ’D’ | ’<’ | ’>’) numero {(’U’ | ’D’ | ’<’ | ’>’) numero} :: (U|D|<|>)([0-9])((U|D|<|>)([0-9]))?
+
+comando ::= condicional | operacion
+
+operacion ::= dir | ’A’ | ’B’ | X dir | Y dir | ’L’ tipo | ’R’ | ’Z’ | ’L’ tipo
+
+numero ::= 0 | no_zero {’0’ | no_zero}
+
+no_zero ::= ’1’ | ’2’ | ’3’ | ’4’ | ’5’ | ’6’ | ’7’ | ’8’ | ’9’
+
+tipo = ’c’ | ’e’
